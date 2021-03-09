@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const health = require('@cloudnative/health-connect');
+let healthcheck = new health.HealthChecker();
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
