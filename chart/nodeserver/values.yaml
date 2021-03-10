@@ -25,7 +25,7 @@ image:
       path: /live
       port: 3000
     initialDelaySeconds: 40
-    periodSeconds: 10 
+    periodSeconds: 10
 service:
   name: Node
   type: NodePort

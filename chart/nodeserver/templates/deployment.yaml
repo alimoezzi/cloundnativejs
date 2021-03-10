@@ -39,6 +39,11 @@ spec:
               configMapKeyRef:
                 name: nodeserverzipkinport # name of the config map
                 key: port
+          - name: dbpass
+            valueFrom:
+              secretKeyRef:
+                name: dbpass
+                key: password
           - name: PORT
             value : "{{ .Values.service.servicePort }}"
         {{- if .Values.image.livenessProbe }}
