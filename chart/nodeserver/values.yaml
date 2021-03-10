@@ -49,3 +49,5 @@ base:
 istio:
   enabled: false
   weight: 100
+password:
+  databasePassword: 123abc
