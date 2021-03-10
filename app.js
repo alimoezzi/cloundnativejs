@@ -1,3 +1,8 @@
+var appzip = require('appmetrics-zipkin')({
+  host: 'zipkin-collector.zipkin.svc.cluster.local',
+  port: process.env.nodeserverzipkinport,
+  serviceName:'nodeserver'
+});
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -6,11 +11,6 @@ var logger = require('morgan');
 const health = require('@cloudnative/health-connect');
 let healthcheck = new health.HealthChecker();
 var prometheus = require('appmetrics-prometheus').attach();
-var appzip = require('appmetrics-zipkin')({
-  host: 'zipkin-collector.zipkin.svc.cluster.local',
-  port: 9411,
-  serviceName:'nodeserver',
-});
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
