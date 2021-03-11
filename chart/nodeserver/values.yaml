@@ -51,3 +51,11 @@ istio:
   weight: 100
 password:
   databasePassword: 123abc
+env:
+  env: 'production'
+  secret:
+    GRAPHQL_ADMIN_SECRET: "demo"
+    AZURE_STORAGE_ACCOUNT_NAME: "demo"
+    AZURE_ACCOUNT_ACCESS_KEY: "demo"
+    AZURE_SERVICE_BUS_CONNECTION_STRING: "demo"
+    KEYCLOAK_BASE_URL: "demo"

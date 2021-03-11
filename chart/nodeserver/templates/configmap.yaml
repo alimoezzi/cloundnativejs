@@ -4,3 +4,8 @@ metadata:
   name: nodeserverzipkinport
 data:
   port: "9411"
+  {{ if eq .Values.env.env "staging"}}
+  testing: "true"
+  {{ else }}
+  testing: "false"
+  {{ end }}
