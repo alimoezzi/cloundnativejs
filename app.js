@@ -1,8 +1,8 @@
-// var appzip = require('appmetrics-zipkin')({
-//   host: 'zipkin-collector.zipkin.svc.cluster.local',
-//   port: process.env.nodeserverzipkinport,
-//   serviceName:'nodeserver'
-// });
+var appzip = require('appmetrics-zipkin')({
+  host: 'zipkin-collector.zipkin.svc.cluster.local',
+  port: process.env.nodeserverzipkinport,
+  serviceName:'nodeserver'
+});
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -29,7 +29,6 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "build")));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/build', express.static(path.join(__dirname, 'build')));
 app.use('/live', health.LivenessEndpoint(healthcheck))
