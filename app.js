@@ -1,8 +1,8 @@
-var appzip = require('appmetrics-zipkin')({
-  host: 'zipkin-collector.zipkin.svc.cluster.local',
-  port: process.env.nodeserverzipkinport,
-  serviceName:'nodeserver'
-});
+// var appzip = require('appmetrics-zipkin')({
+//   host: 'zipkin-collector.zipkin.svc.cluster.local',
+//   port: process.env.nodeserverzipkinport,
+//   serviceName:'nodeserver'
+// });
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -13,6 +13,7 @@ let healthcheck = new health.HealthChecker();
 var prometheus = require('appmetrics-prometheus').attach();
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var helloRouter = require('./routes/hello');
 
 var app = express();
 
@@ -30,6 +31,7 @@ app.use('/ready', health.ReadinessEndpoint(healthcheck))
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/hello', helloRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
