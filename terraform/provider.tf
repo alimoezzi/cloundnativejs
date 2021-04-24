@@ -1,5 +1,5 @@
 provider "google" {
-  version = "~> 3.16.0"
+  version = "~> 3.65.0"
   region  = var.region
   project = var.project
 }
@@ -13,5 +13,5 @@ provider "null" {
 }
 
 provider "kubernetes" {
-  version = "~> v1.11.3"
+  version = "~> 1.11.3"
 }
