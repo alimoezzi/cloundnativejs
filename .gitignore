@@ -214,5 +214,6 @@ dist
 *.code-workspace
 
 client/node_modules
+build
 
 # End of https://www.toptal.com/developers/gitignore/api/node,vscode,intellij+all
