@@ -213,4 +213,6 @@ dist
 !.vscode/extensions.json
 *.code-workspace
 
+client/node_modules
+
 # End of https://www.toptal.com/developers/gitignore/api/node,vscode,intellij+all
