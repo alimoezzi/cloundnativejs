@@ -25,7 +25,7 @@ module "gke" {
   ip_range_services = var.ip_range_services
 
   # optional variables
-  kubernetes_version       = "latest"
+  kubernetes_version       = "1.16.15-gke.12500"
   regional                 = true
   create_service_account   = false
   remove_default_node_pool = true
