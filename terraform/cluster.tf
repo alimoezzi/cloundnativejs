@@ -5,7 +5,6 @@ data "google_client_config" "default" {}
 variable "project" {}
 variable "region" { default = "us-central1" }
 variable "cluster_name" {}
-variable "network" { default = "default" }
 variable "subnetwork" { default = "" }
 variable "ip_range_pods" { default = "" }
 variable "ip_range_services" { default = "" }
@@ -19,8 +18,8 @@ module "gke" {
   project_id        = var.project
   name              = var.cluster_name
   region            = var.region
-  network           = var.network
-  subnetwork        = var.subnetwork
+  network           = google_compute_network.vpc.name
+  subnetwork        = google_compute_subnetwork.subnet.name
   ip_range_pods     = var.ip_range_pods
   ip_range_services = var.ip_range_services
 
@@ -40,7 +39,7 @@ module "gke" {
       name               = "default-node-pool"
       machine_type       = "n1-standard-1"
       min_count          = 2
-      max_count          = 12
+      max_count          = 16
       local_ssd_count    = 0
       disk_size_gb       = 100
       disk_type          = "pd-standard"
