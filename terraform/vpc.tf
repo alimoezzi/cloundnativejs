@@ -1,3 +1,12 @@
+# Variables
+variable "ip_name" {}
+
+# Static IP
+resource "google_compute_global_address" "default" {
+  name          = var.ip_name
+  project        = var.project
+}
+
 # VPC
 resource "google_compute_network" "vpc" {
   name                    = "${var.project}-vpc"
