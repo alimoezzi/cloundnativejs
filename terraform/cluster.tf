@@ -40,7 +40,7 @@ module "gke" {
       name               = "default-node-pool"
       machine_type       = "n1-standard-1"
       min_count          = 2
-      max_count          = 4
+      max_count          = 12
       local_ssd_count    = 0
       disk_size_gb       = 100
       disk_type          = "pd-standard"
