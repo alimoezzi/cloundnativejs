@@ -17,6 +17,12 @@ RUN npm install --production
 
 COPY . /app
 
+WORKDIR "/app/client"
+RUN npm install
+RUN npm run pro
+
+WORKDIR /app
+
 ENV NODE_ENV production
 ENV PORT 3000
 
