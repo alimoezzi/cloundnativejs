@@ -1,4 +1,4 @@
-name: letsencrypt-staging
+name: letsencrypt-prod
 acme:
   email: s.arme@ya.ru
-  secretACMEprivkey: letsencrypt-staging
+  secretACMEprivkey: letsencrypt-prod

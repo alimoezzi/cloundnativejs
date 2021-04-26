@@ -49,7 +49,7 @@ istio:
   enabled: false
   weight: 100
 cert:
-  issuer: letsencrypt-staging
+  issuer: letsencrypt-prod
   secrectConfigMap: cert-secret
 ingress:
   nodeserver:
