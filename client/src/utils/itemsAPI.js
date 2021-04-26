@@ -1,6 +1,6 @@
 import withQuery from 'with-query'
 
-const api = "http://127.0.0.1:3000/todo";
+const api = process.env.NODE_ENV==='production' ? "https://test.sarme.cyou/todo":"http://127.0.0.1:3000/todo";
 let token = localStorage.token;
 
 if (!token) {
