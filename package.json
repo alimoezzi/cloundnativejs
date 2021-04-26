@@ -3,18 +3,22 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "startw": "supervisor --force-watch  --ignore client/node_modules,node_modules ./bin/www"
   },
   "dependencies": {
     "@cloudnative/health-connect": "^2.1.0",
     "appmetrics-prometheus": "^3.1.0",
     "appmetrics-zipkin": "^1.1.1",
     "cookie-parser": "~1.4.3",
+    "cors": "^2.8.5",
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
     "jade": "~1.11.0",
-    "morgan": "~1.9.0",
-    "nodemon": "^1.19.0"
+    "morgan": "~1.9.0"
+  },
+  "devDependencies": {
+    "supervisor": "^0.12.0"
   }
 }

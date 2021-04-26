@@ -10,6 +10,7 @@ spec:
   type: {{ .Values.service.type }}
   ports:
   - name: http  
-    port: {{ .Values.service.servicePort }}
+    targetPort: {{ .Values.service.servicePort }}
+    port: {{ .Values.service.port }}
   selector:
     app: "{{  .Chart.Name }}-selector"
