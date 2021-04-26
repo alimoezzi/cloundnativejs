@@ -28,6 +28,7 @@ service:
   name: Node
   type: NodePort
   servicePort: 3000
+  port: 3000
 hpa:
   enabled: false
   minReplicas: 1
@@ -47,6 +48,15 @@ base:
 istio:
   enabled: false
   weight: 100
+cert:
+  issuer: letsencrypt-staging
+  secrectConfigMap: cert-secret
+ingress:
+  nodeserver:
+    name: nodeserver-ingress
+    host: test.sarme.cyou
+    path: /*
+    globalStaticIP: nodeserverip
 password:
   databasePassword: 123abc
 env:
