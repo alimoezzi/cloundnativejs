@@ -1,7 +1,7 @@
 replicaCount: 2
 revisionHistoryLimit: 1
 image:
-  repository: sarmee/nodeserver
+  repository: gcr.io/cloudkite-interviews-ali/nodeserver
   tag: latest
   pullPolicy: Always 
   resources:
