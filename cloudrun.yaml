@@ -22,7 +22,7 @@ steps:
       [
         "run",
         "deploy",
-        "nodeserver",
+        "${_NAME}",
         "--project",
         "$PROJECT_ID",
         "--platform",
