@@ -4,7 +4,7 @@ metadata:
   name: {{ .Values.name }}
 spec:
   acme:
-    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    server: https://acme-v02.api.letsencrypt.org/directory
     email: {{ .Values.acme.email }} # Update to yours
     privateKeySecretRef:
       name: {{ .Values.acme.secretACMEprivkey }}
