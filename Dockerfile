@@ -17,6 +17,7 @@ RUN npm install --production
 
 COPY . /app
 ENV NODE_ENV production
+ENV NPM_CONFIG_PRODUCTION=false
 
 WORKDIR "/app/client"
 RUN npm install
