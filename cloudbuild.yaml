@@ -1,6 +1,7 @@
 substitutions:
   _NAME: nodeserver
   _REGION: us-central1
+  _DBPASS: dbpass
 
 steps:
   #step 1
@@ -25,7 +26,7 @@ steps:
   #step 4
   - name: "gcr.io/$PROJECT_ID/helm"
     entrypoint: 'bash'
-    args: ['-c', 'helm upgrade --install $_NAME chart/nodeserver']
+    args: ['-c', 'helm upgrade --install $_NAME chart/nodeserver --set password.databasePassword=$_DBPASS']
     env:
       - KUBECONFIG=/workspace/.kube/config
       - CLOUDSDK_COMPUTE_ZONE=$_REGION
