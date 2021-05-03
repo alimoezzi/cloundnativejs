@@ -5,7 +5,7 @@ var router = express.Router();
 router.get("/", function (req, res, next) {
     console.log('index.js')
     res.render("index", {
-        title: "My Express!!!!",
+        title: "My Express!",
         port: process.env.nodeserverzipkinport,
         db: process.env.dbpass
     });
